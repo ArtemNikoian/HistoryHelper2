@@ -29,7 +29,7 @@ sudo apt-get install python3-tk
 8. Click update configuration button to save the changes.
 9. You are all set! Now you are ready to generate event information!
 
-##Generating events info
+## Generating events info
 To generate information about the event, write events you would like to add to your excel file in the empty field at the top, and separate different events with a semicolon. Next, click Process Events button. When the information is generated, check if it is correct and click apply changes when ready.
 
 ## Warnings:
