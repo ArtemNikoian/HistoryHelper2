@@ -1,2 +1,2 @@
 # HistoryHelper2
-Learn historic events easier
+Prepare for history assignments efficiently
