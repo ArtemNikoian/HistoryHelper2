@@ -6,6 +6,7 @@ This code will help you in creating your personal history revision book with all
 ## Setup guide:
 1. Download the project, and open the HistoryHelper folder in your editor (e.g. VS Code). 
 2. Open the terminal, and run these lines of code to install all libraries:
+
 Mac:
 ```
 python3 -m venv venv
