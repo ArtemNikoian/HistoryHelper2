@@ -25,7 +25,7 @@ sudo apt-get install python3-tk
 
 5. Run the AI2.py file by clicking the run button in VS Code or writing ```python3 AI2.py```
 6. Once you run it for the first time, open the new popped-up window and click Toggle Configuration button.
-7. Choose the excel file path you want to use (If you don't have any other files made by the HistoryHelper2, just use the default one in the HistoryHelper2 folder) and the openai api key, which you can create by clicking the get openai api key button.
+7. Choose the excel file path you want to use (If you don't have any other files made by the HistoryHelper2, just use the empty one in HistoryHelper2-main/HistoryHelper/History.xlsx) and the openai api key, which you can create by clicking the get openai api key button.
 8. Click update configuration button to save the changes.
 9. You are all set! Now you are ready to generate event information!
 
