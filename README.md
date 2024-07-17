@@ -4,7 +4,7 @@ This code will help you in creating your personal history revision book with all
 ![Result image](image.png)
 
 ## Setup guide:
-1. Download the project, unzip the file, and open the HistoryHelper folder in your editor (e.g. VS Code) (Be careful, not the HistoryHelper2-main). 
+1. Download the project, unzip the file, and open the HistoryHelper folder, which is inside HistoryHelper2-main folder, in your editor (e.g. VS Code). 
 2. Open the terminal, and run these lines of code to install all libraries:
 
 Mac:
