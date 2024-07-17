@@ -9,12 +9,14 @@ import json  # Import the json module
 import tkinter.filedialog as filedialog
 import webbrowser
 from tkinter import ttk
+import time
 
 file_path=""
 api_key=""
 
 stop_processing = False
 waiting_for_user = False
+wait=False
 
 # Function to load configuration from a JSON file
 def toggle_configuration():
@@ -218,12 +220,12 @@ def find_init_date(full_date):
 current_event_details = {}
 
 def apply_changes():
-    global current_event_details
+    global current_event_details, wait
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook.active
 
     event_name = event_name_text.get("1.0", tk.END)
-    event_date = date_text.get("1.0", tk.END)
+    event_date = date_text.get("1.0", tk.END).strip()
     event_people = people_text.get("1.0", tk.END)
     event_countries = countries_text.get("1.0", tk.END)
     event_what = what_text.get("1.0", tk.END)
@@ -273,10 +275,12 @@ def apply_changes():
     countries_text.delete("1.0", tk.END)
     what_text.delete("1.0", tk.END)
     why_text.delete("1.0", tk.END)
+    
+    wait=False
 
 
 def process_events():
-    global stop_processing, waiting_for_user, current_event_details
+    global stop_processing, waiting_for_user, current_event_details, wait
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook.active
     event_names = event_names_entry.get().split("; ")
@@ -299,7 +303,7 @@ def process_events():
 
                 event_name_text.insert(tk.END, event_name)
 
-                event_date = find_date(text)
+                event_date = find_date(text).strip()
                 event_people = find_people(text)
                 event_countries = find_countries(text)
                 event_what = find_what(text)
@@ -323,12 +327,13 @@ def process_events():
                     output_text.insert(tk.END, f"Too many unsuccessful trials for event {event_name}. 🛑\n")
                     output_text.update_idletasks()
                     break
+        apply_changes_button.grid()
+        wait=True
+        while wait:
+            time.sleep(0)
     output_text.insert(tk.END, f"Finished generating 🆗\n")
     stop_processing = False
     workbook.close()
-
-    # Show the "Apply Changes" button after processing events
-    apply_changes_button.grid()
 
 
 
